@@ -12,10 +12,8 @@ namespace TriangleTests
     {
     public:
 
-        // Тестуємо обчислення сторін та периметру
         TEST_METHOD(TestPerimeterAndSides)
         {
-            // Arrange (Підготовка)
             Triangle::Point A, B, C;
             A.Init(0, 0);
             B.Init(3, 0);
@@ -24,10 +22,8 @@ namespace TriangleTests
             Triangle t;
             t.Init(A, B, C);
 
-            double tolerance = 0.001; // Похибка для порівняння double
+            double tolerance = 0.001;
 
-            // Act & Assert (Виконання та Перевірка)
-            // Assert::AreEqual(Очікуване, Фактичне, Похибка, Повідомлення про помилку)
             Assert::AreEqual(5.0, t.get_a(), tolerance, L"Сторона A обчислена неправильно");
             Assert::AreEqual(4.0, t.get_b(), tolerance, L"Сторона B обчислена неправильно");
             Assert::AreEqual(3.0, t.get_c(), tolerance, L"Сторона C обчислена неправильно");
@@ -35,7 +31,6 @@ namespace TriangleTests
             Assert::AreEqual(12.0, t.perimeter(), tolerance, L"Периметр обчислено неправильно");
         }
 
-        // Тестуємо обчислення площі
         TEST_METHOD(TestArea)
         {
             Triangle::Point A, B, C;
@@ -49,7 +44,6 @@ namespace TriangleTests
             Assert::AreEqual(6.0, t.area(), tolerance, L"Площа обчислена неправильно");
         }
 
-        // Тестуємо визначення типу
         TEST_METHOD(TestType)
         {
             Triangle::Point A, B, C;
